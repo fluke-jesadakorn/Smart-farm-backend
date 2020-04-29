@@ -1,6 +1,15 @@
 const dgram = require("dgram");
 const server = dgram.createSocket("udp4");
 const NbIoTPort = 5003;
+const firebase = require('firebase');
+
+if (!firebase.apps.length) {
+	try {
+		firebase.initializeApp(firebaseConfig);
+	} catch (e) {
+		console.error(e)
+	}
+}
 
 var NBIoT = {
 	NbIP: null,
@@ -20,10 +29,11 @@ server.on("message", async (msg, rinfo) => {
 	NBIoT.NBPort = rinfo.port;
 	NBIoT.NBMsg = msg.toString();
 
-	// let ack = new Buffer("1")
-	// server.send(ack, 0, ack.length, rinfo.port, rinfo.address, function (err, bytes) {
-	// 	console.log("sent ACK. 0 ")
-	// })
+	firebase.database().ref('NBIoT').push({
+		NbIP: rinfo.address,
+		NBPort: rinfo.port,
+		NBMsg: msg.toString(),
+	})
 })
 
 server.on("listening", function () {
@@ -111,4 +121,4 @@ const getWaterState = () => {
 		console.log('Please Wait For NBIoT Connected First');
 	}
 }
-module.exports = { waterOnOff, setTimeOnOff, getLastData, setHumidity, getOnOffTime, getWaterState }
+// module.exports = { waterOnOff, setTimeOnOff, getLastData, setHumidity, getOnOffTime, getWaterState }

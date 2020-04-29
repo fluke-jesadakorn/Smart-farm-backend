@@ -1,0 +1,24 @@
+{
+  "name": "SmartFarmBackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "NBServ.js",
+  "dependencies": {
+    "firebase": "^7.14.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fluke-jesadakorn/Smart-farm-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fluke-jesadakorn/Smart-farm-backend/issues"
+  },
+  "homepage": "https://github.com/fluke-jesadakorn/Smart-farm-backend#readme"
+}

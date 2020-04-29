@@ -2,7 +2,6 @@ const fs = require('fs');
 const https = require('https');
 const http = require('http');
 module.exports = (PORT, appFromExpress, serverType) => {
-    
 
     let server
     if (process.env.NODE_ENV === 'production') {
