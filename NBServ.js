@@ -2,7 +2,7 @@ const dgram = require("dgram");
 const server = dgram.createSocket("udp4");
 const NbIoTPort = 5003;
 const firebase = require('firebase');
-
+const { firebaseConfig } = require('./firebase')
 if (!firebase.apps.length) {
 	try {
 		firebase.initializeApp(firebaseConfig);
