@@ -1,13 +1,13 @@
-require('dotenv').config()
+// require('dotenv').config()
 const serverType = 'Line';
 const express = require('express')
 const bodyParser = require('body-parser')
 const axios = require('axios')
 const app = express()
-const PORT = process.env.PORT || 5006
+const PORT = process.env.PORT || 3000
 const LineToken = process.env.LINE_TOKEN;
-const serverWithSSL = require('./globalHttpsConf')
-const NBServ = require('./NBServ')
+// const serverWithSSL = require('./globalHttpsConf')
+// const NBServ = require('./NBServ')
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -18,7 +18,7 @@ app.post('/webhook', async (req, res) => {
     res.sendStatus(200);
 })
 
-serverWithSSL(PORT, app, serverType);
+// serverWithSSL(PORT, app, serverType);
 
 async function reply(reply_token, msg) {
     let headers = {
@@ -112,3 +112,5 @@ async function reply(reply_token, msg) {
         console.log(error.config);
     });
 }
+
+app.listen(PORT, () => console.log('listen : ' + PORT))
