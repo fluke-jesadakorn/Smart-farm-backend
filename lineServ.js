@@ -7,7 +7,7 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const LineToken = process.env.LINE_TOKEN;
 // const serverWithSSL = require('./globalHttpsConf')
-// const NBServ = require('./NBServ')
+const NBServ = require('./NBServ')
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

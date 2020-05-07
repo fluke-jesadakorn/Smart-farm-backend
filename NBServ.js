@@ -34,7 +34,7 @@ server.on("message", async (msg, rinfo) => {
 		NbIP: rinfo.address,
 		NBPort: rinfo.port,
 		NBMsg: msg.toString(),
-		Date: `${new Date().getDay()}:${new Date().getMonth()}:${new Date().getFullYear()}`
+		Date: `${new Date().getMinutes()}:${new Date().getHours()} ${new Date().getDay() + 1}:${new Date().getMonth() + 1}:${new Date().getFullYear()}}`
 	})
 })
 
