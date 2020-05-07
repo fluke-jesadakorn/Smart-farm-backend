@@ -1,4 +1,4 @@
-export const firebaseConfig = {
+exports.firebaseConfig = {
     apiKey: "AIzaSyCzwvK4yImK2iWDcXa6EbXnTCI2vuFZAY0",
     authDomain: "smartfarm-efbd0.firebaseapp.com",
     databaseURL: "https://smartfarm-efbd0.firebaseio.com",
