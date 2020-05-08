@@ -123,4 +123,4 @@ const getWaterState = () => {
 		console.log('Please Wait For NBIoT Connected First');
 	}
 }
-// module.exports = { waterOnOff, setTimeOnOff, getLastData, setHumidity, getOnOffTime, getWaterState }
+module.exports = { waterOnOff, setTimeOnOff, getLastData, setHumidity, getOnOffTime, getWaterState }
